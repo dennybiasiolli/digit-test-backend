@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+        "firstName": "Administrator",
+        "lastName": ""
+    },
+    {
+        "id": 2,
+        "username": "mario",
+        "passwordHash": "59195c6c541c8307f1da2d1e768d6f2280c984df217ad5f4c64c3542b04111a4",
+        "firstName": "Mario",
+        "lastName": "Bianchi"
+    },
+    {
+        "id": 3,
+        "username": "paolo",
+        "passwordHash": "254835d73cc88095a30fc74133beabe9d8463b2954493227b205ea326c8a9c86",
+        "firstName": "Paolo",
+        "lastName": "Rosso"
+    }
+]
