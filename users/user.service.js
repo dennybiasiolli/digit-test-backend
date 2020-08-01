@@ -5,7 +5,7 @@ const config = require('config.json');
 const jwt = require('jsonwebtoken');
 
 // users hardcoded for simplicity, store in a db for production applications
-const users = JSON.parse(
+const getUsers = () => JSON.parse(
     fs.readFileSync(
         path.join(__dirname, '../rawData/users.json')
     )
@@ -18,7 +18,7 @@ module.exports = {
 
 async function authenticate({ username, password }) {
     const shaPassword = crypto.createHash('sha256').update(password).digest('hex');
-    const user = users.find(
+    const user = getUsers().find(
       u => u.username === username && u.passwordHash === shaPassword
     );
 
@@ -35,7 +35,7 @@ async function authenticate({ username, password }) {
 
 async function getUser(userId) {
     return omitPassword(
-        users.filter(u => u.id === userId)[0]
+        getUsers().filter(u => u.id === userId)[0]
     );
 }
 
