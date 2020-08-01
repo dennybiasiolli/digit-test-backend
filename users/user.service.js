@@ -13,7 +13,7 @@ const users = JSON.parse(
 
 module.exports = {
     authenticate,
-    getAll
+    getUser
 };
 
 async function authenticate({ username, password }) {
@@ -33,8 +33,10 @@ async function authenticate({ username, password }) {
     };
 }
 
-async function getAll() {
-    return users.map(u => omitPassword(u));
+async function getUser(userId) {
+    return omitPassword(
+        users.filter(u => u.id === userId)[0]
+    );
 }
 
 // helper functions
